@@ -1,5 +1,6 @@
-frontend/node_module
-backend/env
-backend/__pycache__
-backend/pattern/__pycache__
 backend/**/__pycache__
+backend/env
+frontend/node_modules/
+git rm -r --cached .
+git add .
+git commit -m "fixed untracked files"

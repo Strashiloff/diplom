@@ -31,7 +31,7 @@ web = '''  web:
 dbps = '''  db:
     image: postgres:12
     environment:
-      - ROOT_PASSWORD=%s
+      - POSTGRES_PASSWORD=%s
     volumes:
       - "/mnt/frontend/postgresql /var/lib/postgresql/ "
       - "/mnt/frontend/pos.cnf:/etc/pos.cnf"

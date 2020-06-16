@@ -14,16 +14,6 @@ services:
     depends_on:
       - nginx
 
-  db:
-    image: postgres:12
-    environment:
-      - ROOT_PASSWORD=1r2d21d
-    volumes:
-      - "/mnt/frontend/postgresql /var/lib/postgresql/ "
-      - "/mnt/frontend/pos.cnf:/etc/pos.cnf"
-    ports:
-      - "3306:5432"
-
   nginx:
     image: nginx:stable
     volumes:

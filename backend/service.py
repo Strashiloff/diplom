@@ -55,7 +55,7 @@ def MakeComposeFile (path, db, password, interface):
   if interface:
     strings.append(patterncompose.adminer)
 
-  strings.append(db_pat)
+  # strings.append(db_pat)
   strings.append(patterncompose.nginx)
   
   writeFile(filename, strings, path)
@@ -120,9 +120,8 @@ def runScript (path, flag):
   path = os.path.abspath(path)
   print(path)
   if flag:
-    p = subprocess.Popen(['./launch_infrastructure.sh', str(path), ''], stdout=subprocess.PIPE)
+    subprocess.call(['./launch_infrastructure.sh', path, flag])
+    # subprocess.Popen(['./launch_infrastructure.sh', path, flag], stdout=subprocess.PIPE)
   else:
-    p = subprocess.Popen(['./launch_infrastructure.sh', path, str(flag)], stdout=subprocess.PIPE)
-    
-  line = p.stdout.readline()
-  print(line)
+    subprocess.call(['./launch_infrastructure.sh', path])
+    # subprocess.Popen(['./launch_infrastructure.sh', path,], stdout=subprocess.PIPE)

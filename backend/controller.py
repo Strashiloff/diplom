@@ -14,7 +14,7 @@ def index():
   if request.method == 'POST':
     data = request.get_json ()
     service.makeInfrastructure (data)
-    return jsonify (message = 'False')
+    return jsonify (message = 'True')
   return render_template ('index.html')
 
 @app.route('/list', methods=['POST'])
@@ -24,6 +24,7 @@ def listConf ():
 @app.route('/delete', methods=['POST'])
 def delete ():
   data = request.get_json ()
+  print(data)
   service.deleteConfig (data)
-  return jsonify (message = 'False')
+  return jsonify (message = 'True')
 

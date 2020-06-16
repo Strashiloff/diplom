@@ -3,7 +3,7 @@ services:
 
   web:
     build:
-      context: /home/alex/dev/study/
+      context: /home/alex/
       dockerfile: Dockerfile
     environment:
       OPENSSL_CONF: /usr/local/ssl/openssl.cnf
@@ -14,20 +14,15 @@ services:
     depends_on:
       - nginx
 
-  pma:
-    image: adminer:latest
-    ports:
-      - "8081:8080"
-
   db:
-    image: postgres:12
+    image: mariadb:10.3
     environment:
-      - ROOT_PASSWORD=123
+      - ROOT_PASSWORD=1wfe123fG
     volumes:
-      - "/mnt/frontend/postgresql /var/lib/postgresql/ "
-      - "/mnt/frontend/pos.cnf:/etc/pos.cnf"
+      - "/mnt/frontend/mysql /var/lib/mysql/ "
+      - "/mnt/frontend/my.cnf:/etc/my.cnf"
     ports:
-      - "5432:3306"
+      - "3306:3306"
 
   nginx:
     image: nginx:stable

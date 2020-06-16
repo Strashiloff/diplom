@@ -1,4 +1,5 @@
-FROM php:7.4
+FROM python:3.8
+RUN pip install --no-cache-dir -r req.txt
 RUN echo "deb http://mirror.yandex.ru/debian/ stretch main contrib non-free" > /etc/apt/sources.list
 RUN echo "deb http://security.debian.org/debian-security stretch/updates main contrib non-free" >> /etc/apt/sources.list
 RUN echo "deb http://mirror.yandex.ru/debian/ stretch-updates main contrib non-free" >> /etc/apt/sources.list

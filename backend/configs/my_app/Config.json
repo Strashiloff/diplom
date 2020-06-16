@@ -1,0 +1,1 @@
+{"db": "mariadb:10.3", "interface": false, "lang": "python", "name": "my_app", "option": "req.txt", "password": "1wfe123fG", "path": "/home/alex/", "version": "3.8"}

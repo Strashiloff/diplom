@@ -36,7 +36,7 @@ dbps = '''  db:
       - "/mnt/frontend/postgresql /var/lib/postgresql/ "
       - "/mnt/frontend/pos.cnf:/etc/pos.cnf"
     ports:
-      - "3306:3306"\n\n'''
+      - "3306:5432"\n\n'''
       
 dbmy = '''  db:
     image: mariadb:10.3

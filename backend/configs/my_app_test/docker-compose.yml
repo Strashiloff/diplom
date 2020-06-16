@@ -22,7 +22,7 @@ services:
   db:
     image: postgres:12
     environment:
-      - ROOT_PASSWORD=123
+      - ROOT_PASSWORD=1wfe123fG
     volumes:
       - "/mnt/frontend/postgresql /var/lib/postgresql/ "
       - "/mnt/frontend/pos.cnf:/etc/pos.cnf"

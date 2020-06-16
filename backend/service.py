@@ -1,4 +1,4 @@
-import os, shutil, json
+import os, shutil, json, subprocess
 from flask import jsonify
 import pattern.dockerfilepattern as patternfile
 import pattern.dockercompose as patterncompose
@@ -17,6 +17,7 @@ def makeInfrastructure (data):
   pathfile = MakeDockerFile (lang, version, option, path)
   pathcompose = MakeComposeFile (path, db, password, interface)
   saveConfig (name, data, pathfile, pathcompose)
+  runScript (path, False)
   
 def MakeDockerFile (lang, version, option, path):
   lang_pat = ""
@@ -101,9 +102,27 @@ def deleteConfig (data):
   name = data['name']
   path = data['path']
   directory = dirConfig + name
+  runScript (path, True)
   try:
     os.remove (os.path.abspath(path) + '/' + 'Dockerfile')
+  except Exception as e:
+    print(e)
+  try:
     os.remove (os.path.abspath(path) + '/' + 'docker-compose.yml')
+  except Exception as e:
+    print(e)
+  try:
     shutil.rmtree(directory)
   except Exception as e:
     print(e)
+
+def runScript (path, flag):
+  path = os.path.abspath(path)
+  print(path)
+  if flag:
+    p = subprocess.Popen(['./launch_infrastructure.sh', str(path), ''], stdout=subprocess.PIPE)
+  else:
+    p = subprocess.Popen(['./launch_infrastructure.sh', path, str(flag)], stdout=subprocess.PIPE)
+    
+  line = p.stdout.readline()
+  print(line)

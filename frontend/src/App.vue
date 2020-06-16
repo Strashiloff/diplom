@@ -1,15 +1,22 @@
 <template>
-  <div>
-    <h1>Hello World!</h1>
-  </div>
+  <Main/>
 </template>
 
 <script>
-export default {
+import Main from './components/Main'
 
+export default {
+  name: 'app',
+  components: {
+    Main
+  }
 }
 </script>
 
 <style>
-
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+  }
 </style>

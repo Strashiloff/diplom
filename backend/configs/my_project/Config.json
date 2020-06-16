@@ -1,1 +1,1 @@
-{"name": "my_project", "lang": "node", "version": 13, "option": "", "path": "/home/alex/dev/study", "db": "postgres:12", "password": "123", "interface": true}
+{"db": "postgres:12", "interface": true, "lang": "php", "name": "my_project", "option": "", "password": "123", "path": "/home/alex/dev/study", "version": "7.4"}

@@ -1,6 +1,6 @@
 from controller import app
 import webbrowser
-dev=True
+dev=False
 if __name__ == "__main__":
   if not dev:
     webbrowser.open_new('http://localhost:5000')

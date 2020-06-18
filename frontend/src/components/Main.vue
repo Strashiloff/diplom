@@ -14,7 +14,7 @@
     <v-navigation-drawer 
         permanent
         fixed 
-        width="20%"
+        width="22%"
         style="top: 64px; heigth: 100vh; max-height: calc(100% - 111px)"
         absolute
         v-model="value">

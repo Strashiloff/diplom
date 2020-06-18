@@ -1,5 +1,5 @@
 backend/**/__pycache__
-backend/configs
+backend/configs/*
 backend/env
 frontend/node_modules/
 frontend/dist
